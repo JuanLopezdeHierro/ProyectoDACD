@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c93277e2-2b27-4bd2-81cd-f5fe4905eea3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/control/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/model/WeatherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/model/WeatherProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/model/WeatherProviderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/model/WeatherStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/model/WeatherStoreImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/variables/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/variables/Weather.java" afterDir="false" />
+    <list default="true" id="c93277e2-2b27-4bd2-81cd-f5fe4905eea3" name="Changes" comment="Prediction-Provider's objects created">
+      <change beforePath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/variables/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/prediction-provider/src/main/java/org/predictionprovider/variables/Weather.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +61,24 @@
       <option name="presentableId" value="Default" />
       <updated>1718019015694</updated>
       <workItem from="1718019016686" duration="856000" />
-      <workItem from="1718097968211" duration="1989000" />
+      <workItem from="1718097968211" duration="2308000" />
     </task>
+    <task id="LOCAL-00001" summary="Prediction-Provider's objects created">
+      <option name="closed" value="true" />
+      <created>1718100973993</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718100973993</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Prediction-Provider's objects created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prediction-Provider's objects created" />
   </component>
 </project>
