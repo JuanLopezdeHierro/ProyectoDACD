@@ -10,6 +10,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +61,10 @@ public class WeatherProviderImpl implements WeatherProvider {
         JsonArray listArray = jsonObject.getAsJsonArray("list");
 
         List<Weather> weatherList = new ArrayList<>();
+        LocalDateTime now = LocalDateTime.now();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
         for (JsonElement element : listArray) {
             JsonObject weatherObject = element.getAsJsonObject();
             JsonObject main = weatherObject.getAsJsonObject("main");
@@ -67,14 +73,21 @@ public class WeatherProviderImpl implements WeatherProvider {
             JsonObject wind = weatherObject.getAsJsonObject("wind");
             JsonObject clouds = weatherObject.getAsJsonObject("clouds");
 
-            double temp = main.get("temp").getAsDouble();
-            double precipitationProbability = weatherDetails.has("pop") ? weatherDetails.get("pop").getAsDouble() : 0.0;
-            double humidity = main.get("humidity").getAsDouble();
-            double cloudiness = clouds.get("all").getAsDouble();
-            double windSpeed = wind.get("speed").getAsDouble();
+            String timestampString = weatherObject.get("dt_txt").getAsString();
+            LocalDateTime timestamp = LocalDateTime.parse(timestampString, formatter);
 
-            Weather weather = new Weather(temp, precipitationProbability, humidity, cloudiness, windSpeed);
-            weatherList.add(weather);
+            if (timestamp.getHour() == 12 && timestamp.getMinute() == 0 && timestamp.getSecond() == 0
+                    && now.plusDays(5).toLocalDate().compareTo(timestamp.toLocalDate()) >= 0) {
+                double temp = main.get("temp").getAsDouble();
+                double precipitationProbability = weatherObject.has("pop") ? weatherObject.get("pop").getAsDouble() : 0.0;
+                double humidity = main.get("humidity").getAsDouble();
+                double cloudiness = clouds.get("all").getAsDouble();
+                double windSpeed = wind.get("speed").getAsDouble();
+                String timestampFormatted = timestamp.format(formatter);
+
+                Weather weather = new Weather(temp, precipitationProbability, humidity, cloudiness, windSpeed, timestampFormatted);
+                weatherList.add(weather);
+            }
         }
         return weatherList;
     }

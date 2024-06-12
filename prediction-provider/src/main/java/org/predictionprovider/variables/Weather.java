@@ -6,13 +6,15 @@ public class Weather {
     private double humidity;
     private double clouds;
     private double windSpeed;
+    private String timestamp;
 
-    public Weather(double temp, double precipitationProbability, double humidity, double clouds, double windSpeed) {
+    public Weather(double temp, double precipitationProbability, double humidity, double clouds, double windSpeed, String timestamp) {
         this.temp = temp;
         this.precipitationProbability = precipitationProbability;
         this.humidity = humidity;
         this.clouds = clouds;
         this.windSpeed = windSpeed;
+        this.timestamp = timestamp;
     }
 
     public double getTemp() {
@@ -35,6 +37,10 @@ public class Weather {
         return windSpeed;
     }
 
+    public String getTimestamp() {
+        return timestamp;
+    }
+
     public void setTemp(double temp) {
         this.temp = temp;
     }
@@ -53,5 +59,9 @@ public class Weather {
 
     public void setWindSpeed(double windSpeed) {
         this.windSpeed = windSpeed;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }
