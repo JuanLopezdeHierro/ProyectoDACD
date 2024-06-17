@@ -13,7 +13,7 @@ public class Main {
         String apikey = args[0];
         ArrayList<Location> locations = Location.islandCoordinates();
         WeatherProviderImpl weatherApi = new WeatherProviderImpl(apikey);
-        WeatherStoreImpl weatherStore = new WeatherStoreImpl("jdbc:sqlite:tiempo.db");
+        WeatherStoreImpl weatherStore = new WeatherStoreImpl("jdbc:sqlite:tiempo1.db");
         Timer timer = new Timer();
         WeatherController updater = new WeatherController(weatherApi, locations, weatherStore);
         timer.schedule(updater, 0, 21600000);
